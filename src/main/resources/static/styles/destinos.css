@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+main {
+    margin-top: 266px;
+    overflow-x: hidden;
+}
+#title {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.text-body-secondary > a {
+    text-decoration: none !important;
+}
+

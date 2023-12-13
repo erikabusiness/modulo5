@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Discoverer Experience</title>
+  <link rel="stylesheet" th:href="@{/styles/style.css}">
+  <link rel="stylesheet" th:href="@{/styles/home.css}">
+  <link rel="stylesheet" th:href="@{/styles/medias.css}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="shortcut icon" th:href="@{/assets/favicon.png}" type="image/x-icon">
+</head>
+
+<body>
+
+  <header class="container-fluid bg-white">
+
+  </header>
+
+  <main class="container-fluid p-0">
+    <h2>Home</h2>
+
+    <div class="container">
+      <small id="atualdate"></small>
+      <h3>Destinos mais buscados hoje:</h3>
+
+      <!-- cards -->
+      <div class="container mt-4 gallery-container photo-gallery" id="cardsHome">
+        <!-- Conteúdo dos cards aqui -->
+      </div>
+      <!-- fim cards -->
+    </div>
+
+    <!-- frase -->
+    <div class="container banner my-5" id="txtrosa">
+      <p id="txt-lg-home">Uma agência de viagens moderna que te conecta perto e longe <span
+          class="blinking-cursor">|</span></p>
+
+    </div>
+    <!-- fim frase -->
+
+    <!-- nuvem de botões -->
+    <div id="btnsHome" class="container my-5 p-3 d-flex justify-content-center flex-wrap">
+      <!-- Conteúdo dos botões aqui -->
+    </div>
+    <!-- fim nuvem de botões -->
+
+    <!-- avaliaçoes -->
+    <div class="container-fluid img-fluid p-0 m-0" id="bannerhome">
+      <div class="container">
+        <h4 id="bannertitle" class="row justify-content-center align-items-center py-lg-5">O que nossos clientes estão
+          falando:</h4>
+      </div>
+      <!-- inicio dos boxes -->
+      <div class="container-fluid boxes-container">
+        <div class="row justify-content-center align-items-center">
+          <!-- Conteúdo das avaliações aqui -->
+        </div>
+      </div>
+    </div>
+    <!-- fim avaliações -->
+
+  </main>
+
+  <footer class="ft-cntt">
+    <!-- Conteúdo do rodapé aqui -->
+  </footer>
+
+  <script type="module" th:src="@{/js/index.js}"></script>
+  <!-- <script th:src="@{/js/main.js}"></script> -->
+
+</body>
+
+</html>

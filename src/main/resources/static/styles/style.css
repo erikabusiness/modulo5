@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter&display=swap');
+
+/*variaveis do projeto*/
+:root {
+    --fontetitulo: 'Cinzel', serif;
+    --rosatitulo: #DB2777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+/*Cabeçalho */
+@media (max-width: 320px) {
+   main {
+    margin-top: 280px !important;
+    }
+}
+header {
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+    position: fixed; /*fixa toda essa div*/
+    top: 0; /*anchor point da pagina*/
+    z-index: 1000; /*usado pra garantir que header e nav não seja sobreposto */
+}
+
+/*Configuração da sombra que ativa ao rolar a pagina. Esta conectada com Javascript*/
+header.scrolled {
+    -webkit-box-shadow: 0px 13px 25px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 13px 25px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 13px 25px 0px rgba(0, 0, 0, 0.75);
+}
+/* Titulo, subtitulo e link da nav */
+header h1,
+main>h2,
+a.active {
+    font-family: var(--fontetitulo);
+}
+/*Detalhe no titulo principal*/
+header span {
+    color: var(--rosatitulo);
+}
+
+/*Estilo dos botões da nav*/
+a.active {
+    background-color: var(--rosatitulo) !important;
+    border: var(--rosatitulo) !important;
+    border-radius: 20px !important;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    transition: .3s ease all !important; 
+}
+
+/*Configurações ao passar o mouse nos botões da nav*/
+a.active:hover {
+    transform: scale(1.1) !important;
+    cursor: pointer !important;
+    color: black !important;
+}
+.banner {
+    display: flex; /* Crie um contêiner flexbox */
+    justify-content: center; /* Alinhe horizontalmente no centro */
+    align-items: center; /* Alinhe verticalmente no centro */
+}
+#txt-lg-home {
+    border-right: 4px solid transparent;
+    font-size: 35px;
+    width: 59ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(59), blinking 0.7s infinite step-end;   
+}
+@keyframes typing {
+    from {
+        width: 0ch;  
+    }
+    to {
+        width: 59ch; /* Largura máxima correspondente ao texto completo */
+    }
+}
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.blinking-cursor {
+    animation: blinking2 0.7s infinite step-end;
+}
+@keyframes blinking2 {
+    50% {
+        opacity: 0;
+    }
+}
+footer {
+    background-color: var(--rosatitulo);
+    color: whitesmoke;
+    text-align: center;
+    padding: 50px;
+}
+footer>p>strong>a, footer p a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+#footer-cntt {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--rosatitulo);
+    color: whitesmoke;
+    text-align: center;
+    padding: 2px;
+}
+
+
+.devicon-linkedin-plain , .devicon-github-original {
+    color: white;
+    
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: whitesmoke;
+    padding: 2px;
+    border-radius: 12px;
+    outline: 2px solid var(--rosatitulo);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--rosatitulo);
+    border-radius: 12px;
+    padding: 2px;
+    border: 2px solid whitesmoke;
+}

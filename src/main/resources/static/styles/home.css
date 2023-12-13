@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter&display=swap');
+
+/*variaveis do projeto*/
+:root {
+    --fontetitulo: 'Cinzel', serif;
+    --rosatitulo: #DB2777;
+}
+main {
+    margin-top: 266px;
+    overflow-x: hidden;
+}
+main > h2 {
+    text-align: center;
+}
+
+small {
+    color: var(--rosatitulo);
+    margin-bottom: 20px;
+}
+/* Teste */
+.gallery-container {
+    overflow-x:scroll;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border: none;
+    display: inline-block;
+}
+.gallery-item {
+    display: inline-block;
+    margin-right: 10px; /* Espaçamento entre as fotos */
+    
+}
+.gallery-item img {
+    max-width: 200px;
+    max-height: 350px;
+    border-radius: 7px;
+    position: relative;
+    
+}
+.gallery-item:last-child {
+    margin-right: 0; /* Remove a margem direita do último card */
+}
+#txtrosa {
+    color: var(--rosatitulo);
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 50px;
+}
+#bannerhome {
+    background-image: url('../assets/home/wallpaper.jpg');
+    background-size: cover;
+    background-position: center center;
+    box-shadow: inset 10px 10px 100px 0px black;
+    height: 100vh;
+    justify-content: center !important;   
+    background-attachment: fixed;
+}
+#bannertitle {
+    color: whitesmoke;
+    font-family: var(--fontetitulo);
+    text-shadow: 2px 1px black;
+    padding: 50px 0px 40px 0px;
+}
+.boxes-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+  
+
+
+
+

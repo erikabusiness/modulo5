@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+/*inicio banner da home */
+@media screen and (max-width: 576px) {
+  
+  #bannerhome {
+    height: 1350px;
+  }
+}
+@media screen and (min-width: 576px) {
+  #bannerhome {
+    height: 1300px;
+  } 
+}
+@media screen and (min-width: 767px) {
+  #bannerhome {
+    height: 1000px;
+  } 
+}
+@media screen and (min-width: 992px) {
+  #bannerhome {
+    height: 580px;
+  } 
+}
+/* fim do banner da home */
