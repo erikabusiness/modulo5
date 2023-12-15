@@ -31,7 +31,7 @@ public class ReservaController {
 
 	@GetMapping
 	public ModelAndView reservas() {
-		ModelAndView modelAndView = new ModelAndView("views/reserva/index.html");
+		ModelAndView modelAndView = new ModelAndView("/reserva/index.html");
 
 		modelAndView.addObject("listaUsuarios", usuarioRepository.findAll());
 		modelAndView.addObject("listaDestino", destinoRepository.findAll());

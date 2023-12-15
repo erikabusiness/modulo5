@@ -1,5 +1,6 @@
 package tde.modulo5.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,6 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-
-//	@GetMapping
-//	public ModelAndView usuario() {
-//		ModelAndView modelAndView = new ModelAndView("usuario2.html");
-//		modelAndView.addObject("usuarios", usuarioRepository.findAll());
-//
-//		modelAndView.addObject("usuario", new Usuario());
-//
-//		return modelAndView;
-//	}
 	
 	@GetMapping
     public ModelAndView listar() {
@@ -40,19 +31,64 @@ public class UsuarioController {
 
         return modelAndView;
     }
+	
+	
+	@GetMapping("/cadastrar")
+    public ModelAndView cadastrar() {
+        ModelAndView modelAndView = new ModelAndView("usuario/create"); //nome da pasta/ nome do html
 
+        modelAndView.addObject("usuario", new Usuario());
+
+        return modelAndView;
+    }
+	
+	
 	@PostMapping("/cadastrar")
-	public String cadastrar(Usuario usuario) {
-		usuarioRepository.save(usuario);
+    public ModelAndView cadastrar(Usuario usuario)  throws IOException {
+        ModelAndView modelAndView = new ModelAndView("redirect:/usuario");
 
-		return "redirect:/usuario";
-	}
+        usuarioRepository.save(usuario);
 
+        return modelAndView;
+    }
+	
+	
+	
+	@GetMapping("/{id}/editar")
+    public ModelAndView editar(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("usuario/edit");
+
+        Usuario usuario = usuarioRepository.getReferenceById(id);
+        modelAndView.addObject("usuario", usuario);
+
+        return modelAndView;
+    }
+	
+	
+	@PostMapping("/{id}/editar")
+    public ModelAndView editar(Usuario usuario) {
+
+        usuarioRepository.save(usuario);
+        ModelAndView modelAndView = new ModelAndView("redirect:/usuario");
+
+        return modelAndView;
+    }
+	
+	
+	
 	@GetMapping("/{id}/excluir")
-	public String excluir(@PathVariable Long idUsuario) {
-		usuarioRepository.deleteById(idUsuario);
+    public ModelAndView excluir(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("redirect:/usuario");
 
-		return "redirect:/usuario";
-	}
+        usuarioRepository.deleteById(id);
+
+        return modelAndView;
+    }
+	
+	 
+
+	
+	
+	
 
 }

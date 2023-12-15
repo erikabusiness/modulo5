@@ -15,9 +15,9 @@ public class PagesController {
 	public String promocoes() {
 		return "promocoes";
 	}
-	@GetMapping("/contato")
-	public String contato() {
-		return "contato";
+	@GetMapping("/destino")
+	public String destino() {
+		return "destinos";
 	}
 	
 	@GetMapping("/reserva2")

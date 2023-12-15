@@ -21,7 +21,7 @@ public class DestinoController {
 
 	@GetMapping
 	public ModelAndView destino() {
-		ModelAndView modelAndView = new ModelAndView("destinos.html");
+		ModelAndView modelAndView = new ModelAndView("destino/index.html");
 		modelAndView.addObject("destino", destinoRepository.findAll());
 
 		modelAndView.addObject("destino", new Destino());

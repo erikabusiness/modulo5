@@ -18,6 +18,10 @@ public class Usuario {
 	private String email;
 	private String cpf;
 	private String nome;
+	public Long getId() {
+		return id;
+	}
+
 	
 	
 }

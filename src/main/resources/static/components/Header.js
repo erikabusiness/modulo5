@@ -17,7 +17,7 @@ export const Header = () => {
       <ul class="nav nav-pills justify-content-center">
         ${btns}
         <li class="nav-item"> 
-          <a class="nav-link active" href="/reserva2">Cadastros</a> 
+          <a class="nav-link active" href="/reserva">Cadastros</a> 
         </li>
       </ul>
     </nav>

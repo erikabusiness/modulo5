@@ -7,9 +7,6 @@ export const Select = () => {
 			nome: 'Destinos'
 		},
 		{
-			nome: 'Pacotes'
-		},
-		{
 			nome: 'Reserva'
 		},
 	]
@@ -17,7 +14,7 @@ export const Select = () => {
 	
 	links.map(({nome}) => {
 		options.push(`
-		<option value="/tde/html/${nome.toLowerCase()}">${nome}</option>
+		<option value="/${nome.toLowerCase()}">${nome}</option>
 		`)
 	})
 	
