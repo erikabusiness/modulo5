@@ -21,12 +21,35 @@
 
 		</div>
 
-		<!-- Button trigger modal -->
+		<form method="post" th:object="${reserva}">
+			
+			<div class="form-group mb-3">
+				<label for="data" class="form-label"> Checkin </label>
+				<input type="date" class="form-control" id="data" th:field="*{checkin}" required>
+			</div>
+			<div class="form-group mb-3">
+				<label for="data" class="form-label"> Checkout </label>
+				<input type="date" class="form-control" id="data" th:field="*{checkout}" required>
+			</div>
+			<div class="form-group mb-3">
+				<label for="usuario" class="form-label"> Id Usuario </label>
+				<select th:field="*{usuario}" class="form-control">
+					<option th:each="usuario : ${listaUsuarios}" th:text="${usuario.nome}" th:value="${usuario.id}">
+					</option>
+				</select>
+			</div>
+			
+			<div class="form-group mb-3">
+				<label for="destino" class="form-label"> Id Destino </label>
+				<select th:field="*{destino}" class="form-control">
+					<option th:each="destino : ${listaDestino}" th:text="${destino.nome}" th:value="${destino.id}">
+					</option>
+				</select>
+			</div>
 
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastrar
-			reserva</button>
-
-
+			<button type="submit" class="btn btn-primary">Enviar</button>
+			<a href="/clientes" class="btn btn-danger" style="margin-left: 10px"> Cancelar </a>
+		</form>
 
 
 

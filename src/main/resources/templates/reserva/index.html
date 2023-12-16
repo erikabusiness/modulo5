@@ -1,84 +1,82 @@
-
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Reserva</title>
-<link rel="stylesheet" href="../styles/style.css">
-<link rel="stylesheet" href="../styles/home.css">
-<link rel="stylesheet" href="../styles/medias.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-<link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous">
-</head>
-<body class="min-vh-100 d-flex flex-column justify-content-between">
-<header class="container-fluid bg-white">
 
-    </header>
+<head>
+	<meta charset="UTF-8">
+	<title>Reserva</title>
+	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/home.css">
+	<link rel="stylesheet" href="../styles/medias.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	<link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="min-vh-100 d-flex flex-column justify-content-between">
+	<header class="container-fluid bg-white">
+
+	</header>
 	<main class="container">
-	<div id="select">
-	
-	</div>		
-		
+		<div id="select">
+
+		</div>
+
 		<!-- Button trigger modal -->
-		
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-			data-bs-target="#cadastroModal">Cadastrar reserva</button>
+
+		<a th:href="@{reserva/cadastrar}" class="btn btn-primary mb-2"> Cadastrar Reserva </a>
 
 		<div class="container mt-5">
-		<table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Data Compra</th>
-                      <th scope="col">Destinos</th>
-                      <th scope="col">Cliente</th>
-                      <th scope="col">Total</th>
-                      <th scope="col">Ações</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Checkin</th>
+						<th scope="col">Checkout</th>
+						<th scope="col">Destino</th>
+						<th scope="col">Usuario</th>
+						<th scope="col">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
 
 
 
-                    <tr th:each="compra : ${Compra}">
-                        <td th:text="${compra.id}"></td>
-                        <td th:text="${compra.data}"></td>
-                        <td th:text="${compra.destino}"></td>
-                        <td th:text="${compra.cliente}"></td>
-                        <td th:text="${compra.total}"></td>
+					<tr th:each="r : ${reserva}">
+						<td th:text="${r.id}"></td>
+						<td th:text="${r.checkin}"></td>
+						<td th:text="${r.checkout}"></td>
+						<td th:text="${r.destino.nome}"></td>
+						<td th:text="${r.usuario.nome}"></td>
 
-                        <td>
-                           <a th:href="@{/compra/{id}/editar (id=${compra.id})}"
-                                    class="btn btn-primary btn-edit mb-1">
-                                    Editar
-                                </a>
-                                <a th:href="@{/compra/{id}/excluir (id=${compra.id})}"
-                                    class="btn btn-danger btn-edit mb-1"
-                                    onclick="return confirm('Tem certeza que deseja excluir a compra?');">
-                                    Excluir
-                                </a>
-                        </td>
 
-                    </tr>
+						<td>
+							<a th:href="@{/reserva/{id}/editar (id=${reserva.id})}"
+								class="btn btn-primary btn-edit mb-1">
+								Editar
+							</a>
+							<a th:href="@{/reserva/{id}/excluir (id=${reserva.id})}"
+								class="btn btn-danger btn-edit mb-1"
+								onclick="return confirm('Tem certeza que deseja excluir a compra?');">
+								Excluir
+							</a>
+						</td>
 
-                 </tbody>
-                </table>
+					</tr>
 
-	</div>
+				</tbody>
+			</table>
+
+		</div>
 
 
 
 	</main>
 	<footer class="ft-cntt">
-  	</footer>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
 	<script type="module" src="../js/listas.js"></script>
 </body>
+
 </html>

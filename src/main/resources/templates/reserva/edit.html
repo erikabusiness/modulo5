@@ -28,50 +28,36 @@
 
 
 			<div class="container py-3">
-            <form method="POST" th:object="${reserva}">
-                <h2 class="text-center">Atualizar</h2>
+            <form method="post" th:object="${reserva}">
+					<input type="hidden" th:field="*{id}">
+					<div class="form-group mb-3">
+						<label for="data" class="form-label"> Checkin </label>
+						<input type="date" class="form-control" id="data" th:field="*{checkin}" required>
+					</div>
+					<div class="form-group mb-3">
+						<label for="data" class="form-label"> Checkout </label>
+						<input type="date" class="form-control" id="data" th:field="*{checkout}" required>
+					</div>
 
-                <input type="hidden" th:field="{idCli}">
+					<div class="form-group mb-3">
+						<label for="cliente" class="form-label"> Usuario </label>
+						<select th:field="*{usuario}" class="form-control">
+							<option th:each="usuario : ${listaUsuario}" th:text="${usuario.nome}" th:value="${usuario.id}">
+							</option>
+						</select>
+					</div>
+					<div class="form-group mb-3">
+						<label for="destino" class="form-label"> Destino </label>
+						<select th:field="*{destino}" class="form-control">
+							<option th:each="destino : ${listaDestino}" th:text="${destino.nome}" th:value="${destino.id}">
+							</option>
+						</select>
+					</div>
 
-                <div class="form-group mb-3">
-                    <label for="nome" class="form-label">
-                        Nome
-                    </label>
-                    <input type="text" class="form-control" id="nome" th:field="{reserva}">
-                </div>
 
-                <div class="form-group mb-3">
-                    <label for="data" class="form-label">
-                        Data
-                    </label>
-                    <input type="data" class="form-control" id="data" th:field="{data}">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="destino" class="form-label">
-                        Destino
-                    </label>
-                    <input type="text" class="form-control" id="destino" th:field="{destino}">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="id" class="form-label">
-                        ID
-                    </label>
-                    <input type="text" class="form-control" id="id"  th:field="{id}" >
-                </div>
-                <div class="form-group mb-3">
-                    <label for="total" class="form-label">
-                        Total
-                    </label>
-                    <input type="text" class="form-control" id="total" th:field="{total}">
-                </div>
-
-                <button type="submit" class="btn btn-primary">
-                    Enviar
-                </button>
-                <a href="/cliente" class=" btn btn-danger">Cancelar</a>
-            </form>
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<!--                    <a href="/clientes" class="btn btn-danger" style="margin-left: 10px"> Cancelar </a>-->
+				</form>
         </div>
 
     </main>
