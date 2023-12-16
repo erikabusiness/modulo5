@@ -18,7 +18,7 @@ public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private Long idReserva;
+	private Long id;
 	
 	@Column(nullable=false)
 	private String checkout;
@@ -27,12 +27,12 @@ public class Reserva {
 	private String checkin;
 	
 	@ManyToOne
-	@JoinColumn(name = "idUsuario", nullable=false)
-	private Usuario idUsuario;
+	@JoinColumn(name = "usuario_id", nullable=false)
+	private Usuario usuario;
 	
 	@ManyToOne
-	@JoinColumn(name = "idDestino", nullable=false)
-	private Destino idDestino;
+	@JoinColumn(name = "destino_id", nullable=false)
+	private Destino destino;
 
 }
 

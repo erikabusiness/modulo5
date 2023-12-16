@@ -1,0 +1,87 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Reserva</title>
+	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/home.css">
+	<link rel="stylesheet" href="../styles/medias.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	<link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="min-vh-100 d-flex flex-column justify-content-between">
+	<header class="container-fluid bg-white">
+
+	</header>
+	<main class="container">
+		<div id="select">
+
+		</div>
+
+		<!-- Button trigger modal -->
+
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastroModal">
+			reserva</button>
+
+
+			<div class="container py-3">
+            <form method="POST" th:object="${reserva}">
+                <h2 class="text-center">Atualizar</h2>
+
+                <input type="hidden" th:field="{idCli}">
+
+                <div class="form-group mb-3">
+                    <label for="nome" class="form-label">
+                        Nome
+                    </label>
+                    <input type="text" class="form-control" id="nome" th:field="{reserva}">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="data" class="form-label">
+                        Data
+                    </label>
+                    <input type="data" class="form-control" id="data" th:field="{data}">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="destino" class="form-label">
+                        Destino
+                    </label>
+                    <input type="text" class="form-control" id="destino" th:field="{destino}">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="id" class="form-label">
+                        ID
+                    </label>
+                    <input type="text" class="form-control" id="id"  th:field="{id}" >
+                </div>
+                <div class="form-group mb-3">
+                    <label for="total" class="form-label">
+                        Total
+                    </label>
+                    <input type="text" class="form-control" id="total" th:field="{total}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Enviar
+                </button>
+                <a href="/cliente" class=" btn btn-danger">Cancelar</a>
+            </form>
+        </div>
+
+    </main>
+    
+	<footer class="ft-cntt">
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script type="module" src="../js/listas.js"></script>
+</body>
+
+</html>

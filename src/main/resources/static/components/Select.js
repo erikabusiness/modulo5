@@ -4,7 +4,7 @@ export const Select = () => {
 			nome: 'Usuario'
 		},
 		{
-			nome: 'Destinos'
+			nome: 'Destino'
 		},
 		{
 			nome: 'Reserva'

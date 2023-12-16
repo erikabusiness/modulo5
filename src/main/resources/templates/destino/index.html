@@ -1,86 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="/styles/style.css">
-<link rel="stylesheet" href="/styles/home.css">
-<link rel="stylesheet" href="/styles/medias.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-<link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-<meta charset="UTF-8">
-<title>Destino</title>
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous">
-</head >
+<head>
+	<link rel="stylesheet" href="/styles/style.css">
+	<link rel="stylesheet" href="/styles/home.css">
+	<link rel="stylesheet" href="/styles/medias.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	<link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+	<meta charset="UTF-8">
+	<title>Destino</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
 <body class="min-vh-100 d-flex flex-column justify-content-between">
-	
+
 	<header class="container-fluid bg-white">
 
-    </header>
+	</header>
 
 	<main class="container">
-	<div id="select">
-	
-	</div>
+		<div id="select">
+
+		</div>
 		<!-- Button trigger modal -->
 		<a th:href="@{/destino/cadastrar}" class="btn btn-primary">Cadastrar destino</a>
-
-		<!--incio Modal -->
-
-<!--		<div class="modal fade" id="cadastroModal" tabindex="-1"-->
-<!--			aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--			<div class="modal-dialog">-->
-<!--				<div class="modal-content">-->
-<!--					<div class="modal-header">-->
-<!--						<h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro</h1>-->
-<!--						<button type="button" class="btn-close" data-bs-dismiss="modal"-->
-<!--							aria-label="Close"></button>-->
-<!--					</div>-->
-
-<!--					 body modal -->
-<!--					<div class="modal-body">-->
-<!--						<form action="/tde/usuario-save">-->
-<!--							<div class="form-group mb-2 ">-->
-<!--								<label for="name">Nome</label> <input type="text" id="nome"-->
-<!--									name="nome" class="form-control">-->
-<!--							</div>-->
-<!--							<div class="form-group mb-2 ">-->
-<!--								<label for="email">Email</label> <input type="email" id="email"-->
-<!--									name="email" class="form-control">-->
-<!--							</div>-->
-<!--							<div class="form-group mb-2 ">-->
-<!--								<label for="cpf">CPF</label> <input type="text" id="cpf"-->
-<!--									name="cpf" class="form-control">-->
-<!--							</div>-->
-<!--							<div class="form-group mb-2 ">-->
-<!--								<label for="localizacao">Localização</label> <input type="text"-->
-<!--									id="localizacao" name="localizacao" class="form-control">-->
-<!--							</div>-->
-<!--							<div class="form-group mb-2 ">-->
-<!--								<label for="senha">Senha</label> <input type="password"-->
-<!--									id="senha" name="senha" class="form-control">-->
-<!--							</div>-->
-
-<!--							<div class="modal-footer">-->
-<!--								<button type="button" class="btn btn-secondary"-->
-<!--									data-bs-dismiss="modal">Cancelar</button>-->
-<!--								<button type="submit" class="btn btn-primary">Save</button>-->
-<!--							</div>-->
-
-
-<!--						</form>-->
-
-<!--					</div>-->
-
-
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-		<!--  !fim do modal -->
-
 
 
 		<div class="table-responsive">
@@ -92,128 +37,117 @@
 					</tr>
 				</thead>
 				<tbody>
-					
-						<tr th:each="d : ${Destinos}">
-							<th scope="row" th:text="${d.id}"></th>
-							
-							<td th:text="${d.nome}"></td>
-							
-                                <a th:href="@{/destino/{id}/editar (id=${d.destino})}"
-                                    class="btn btn-primary btn-edit mb-1">
-                                    Editar
-                                </a>
-                                <a th:href="@{/destino/{id}/excluir (id=${d.destino})}"
-                                    class="btn btn-danger btn-edit mb-1"
-                                    onclick="return confirm('Tem certeza que deseja excluir o destino?');">
-                                    Excluir
-                                </a>
-                            </td>
-							
-<!--							<td>-->
-								
-<!--								<a href="#" class="btn btn-warning"-->
-<!--								data-bs-toggle="modal"-->
-<!--								data-bs-target="#atualizarModal${u.idUsuario}">Editar</a>-->
 
-<!--								<button class="btn btn-danger" data-bs-toggle="modal"-->
-<!--									data-bs-target="#excluirModal${u.idUsuario }">Excluir</button>-->
-<!--							</td>-->
-						</tr>
-						
-						
-<!--						<div class="modal fade" id="excluirModal${u.idUsuario }"-->
-<!--							tabindex="-1" aria-labelledby="exampleModalLabel"-->
-<!--							aria-hidden="true">-->
-<!--							<div class="modal-dialog">-->
-<!--								<div class="modal-content">-->
-<!--									<div class="modal-header">-->
-<!--										<h5 class="modal-title">Deseja excluir?</h5>-->
-<!--										<button type="button" class="btn-close"-->
-<!--											data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--									</div>-->
-<!--									<div class="modal-body">-->
-<!--										<p>Modal body text goes here.</p>-->
-<!--									</div>-->
-<!--									<div class="modal-footer">-->
-<!--										<button type="button" class="btn btn-secondary"-->
-<!--											data-bs-dismiss="modal">Close</button>-->
-<!--										<a href="/tde/usuario-delete?id=${u.idUsuario}"-->
-<!--											class="btn btn-danger">Excluir</a>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
+					<tr th:each="d : ${destinos}">
+						<th scope="row" th:text="${d.id}"></th>
 
-						<!--incio Modal -->
+						<td th:text="${d.nome}"></td>
+						<td>
+							<a th:href="@{/destino/{id}/editar (id=${d.id})}" class="btn btn-primary btn-edit mb-1">
+								Editar
+							</a>
+							<a th:href="@{/destino/{id}/excluir (id=${d.id})}" class="btn btn-danger btn-edit mb-1"
+								onclick="return confirm('Tem certeza que deseja excluir o destino?');">
+								Excluir
+							</a>
+						</td>
 
-<!--						<div class="modal fade" id="atualizarModal${u.idUsuario}"-->
-<!--							tabindex="-1" aria-labelledby="exampleModalLabel"-->
-<!--							aria-hidden="true">-->
-<!--							<div class="modal-dialog">-->
-<!--								<div class="modal-content">-->
-<!--									<div class="modal-header">-->
-<!--										<h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro</h1>-->
-<!--										<button type="button" class="btn-close"-->
-<!--											data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--									</div>-->
-
-<!--									 body modal -->
-<!--									<div class="modal-body">-->
-
-<!--										<form action="/tde/usuario-save">-->
-<!--											<input type="text" id="idUsuario" name="id"-->
-<!--												class="form-control" value="${u.idUsuario}" hidden>-->
-<!--											<div class="form-group mb-2 ">-->
-<!--												<label for="name">Nome</label> <input type="text" id="nome"-->
-<!--													name="nome" class="form-control" value="${u.nome}">-->
-<!--											</div>-->
-<!--											<div class="form-group mb-2 ">-->
-<!--												<label for="email">Email</label> <input type="email"-->
-<!--													id="email" name="email" class="form-control"-->
-<!--													value="${u.email}">-->
-<!--											</div>-->
-<!--											<div class="form-group mb-2 ">-->
-<!--												<label for="cpf">CPF</label> <input type="text" id="cpf"-->
-<!--													name="cpf" class="form-control" value="${u.cpf}">-->
-<!--											</div>-->
-<!--											<div class="form-group mb-2 ">-->
-<!--												<label for="localizacao">Localização</label> <input-->
-<!--													type="text" id="localizacao" name="localizacao"-->
-<!--													class="form-control" value="${u.localizacao}">-->
-<!--											</div>-->
-<!--											<div class="form-group mb-2 ">-->
-<!--												<label for="senha">Senha</label> <input type="password"-->
-<!--													id="senha" name="senha" class="form-control"-->
-<!--													value="${u.senha}">-->
-<!--											</div>-->
-
-<!--											<div class="modal-footer">-->
-<!--												<button type="button" class="btn btn-secondary"-->
-<!--													data-bs-dismiss="modal">Cancelar</button>-->
-<!--												<button type="submit" class="btn btn-primary">Save</button>-->
-<!--											</div>-->
-<!--										</form>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
-
-						<!--  fim modal -->
+					</tr>
 
 
-					
+					<!--						<div class="modal fade" id="excluirModal${u.idUsuario }"-->
+					<!--							tabindex="-1" aria-labelledby="exampleModalLabel"-->
+					<!--							aria-hidden="true">-->
+					<!--							<div class="modal-dialog">-->
+					<!--								<div class="modal-content">-->
+					<!--									<div class="modal-header">-->
+					<!--										<h5 class="modal-title">Deseja excluir?</h5>-->
+					<!--										<button type="button" class="btn-close"-->
+					<!--											data-bs-dismiss="modal" aria-label="Close"></button>-->
+					<!--									</div>-->
+					<!--									<div class="modal-body">-->
+					<!--										<p>Modal body text goes here.</p>-->
+					<!--									</div>-->
+					<!--									<div class="modal-footer">-->
+					<!--										<button type="button" class="btn btn-secondary"-->
+					<!--											data-bs-dismiss="modal">Close</button>-->
+					<!--										<a href="/tde/usuario-delete?id=${u.idUsuario}"-->
+					<!--											class="btn btn-danger">Excluir</a>-->
+					<!--									</div>-->
+					<!--								</div>-->
+					<!--							</div>-->
+					<!--						</div>-->
+
+					<!--incio Modal -->
+
+					<!--						<div class="modal fade" id="atualizarModal${u.idUsuario}"-->
+					<!--							tabindex="-1" aria-labelledby="exampleModalLabel"-->
+					<!--							aria-hidden="true">-->
+					<!--							<div class="modal-dialog">-->
+					<!--								<div class="modal-content">-->
+					<!--									<div class="modal-header">-->
+					<!--										<h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro</h1>-->
+					<!--										<button type="button" class="btn-close"-->
+					<!--											data-bs-dismiss="modal" aria-label="Close"></button>-->
+					<!--									</div>-->
+
+					<!--									 body modal -->
+					<!--									<div class="modal-body">-->
+
+					<!--										<form action="/tde/usuario-save">-->
+					<!--											<input type="text" id="idUsuario" name="id"-->
+					<!--												class="form-control" value="${u.idUsuario}" hidden>-->
+					<!--											<div class="form-group mb-2 ">-->
+					<!--												<label for="name">Nome</label> <input type="text" id="nome"-->
+					<!--													name="nome" class="form-control" value="${u.nome}">-->
+					<!--											</div>-->
+					<!--											<div class="form-group mb-2 ">-->
+					<!--												<label for="email">Email</label> <input type="email"-->
+					<!--													id="email" name="email" class="form-control"-->
+					<!--													value="${u.email}">-->
+					<!--											</div>-->
+					<!--											<div class="form-group mb-2 ">-->
+					<!--												<label for="cpf">CPF</label> <input type="text" id="cpf"-->
+					<!--													name="cpf" class="form-control" value="${u.cpf}">-->
+					<!--											</div>-->
+					<!--											<div class="form-group mb-2 ">-->
+					<!--												<label for="localizacao">Localização</label> <input-->
+					<!--													type="text" id="localizacao" name="localizacao"-->
+					<!--													class="form-control" value="${u.localizacao}">-->
+					<!--											</div>-->
+					<!--											<div class="form-group mb-2 ">-->
+					<!--												<label for="senha">Senha</label> <input type="password"-->
+					<!--													id="senha" name="senha" class="form-control"-->
+					<!--													value="${u.senha}">-->
+					<!--											</div>-->
+
+					<!--											<div class="modal-footer">-->
+					<!--												<button type="button" class="btn btn-secondary"-->
+					<!--													data-bs-dismiss="modal">Cancelar</button>-->
+					<!--												<button type="submit" class="btn btn-primary">Save</button>-->
+					<!--											</div>-->
+					<!--										</form>-->
+					<!--									</div>-->
+					<!--								</div>-->
+					<!--							</div>-->
+					<!--						</div>-->
+
+					<!--  fim modal -->
+
+
+
 				</tbody>
 			</table>
 		</div>
 	</main>
-	
+
 	<footer class="ft-cntt">
-  	</footer>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
-		<script type="module" src="/js/listas.js"></script>
-		
+	<script type="module" src="/js/listas.js"></script>
+
 </body>
+
 </html>

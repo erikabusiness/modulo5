@@ -15,8 +15,8 @@ public class PagesController {
 	public String promocoes() {
 		return "promocoes";
 	}
-	@GetMapping("/destino")
-	public String destino() {
+	@GetMapping("/destinos")
+	public String destinosPage() {
 		return "destinos";
 	}
 	
