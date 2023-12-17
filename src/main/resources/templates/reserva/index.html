@@ -45,23 +45,20 @@
 						<td th:text="${r.id}"></td>
 						<td th:text="${r.checkin}"></td>
 						<td th:text="${r.checkout}"></td>
-						<td th:text="${r.destino.nome}"></td>
-						<td th:text="${r.usuario.nome}"></td>
-
+						<td th:if="${r.destino != null}" th:text="${r.destino.nome}">Texto Padrão</td>
+						<td th:if="${r.usuario != null}" th:text="${r.usuario.nome}">Texto Padrão</td>
 
 						<td>
-							<a th:href="@{/reserva/{id}/editar (id=${reserva.id})}"
-								class="btn btn-primary btn-edit mb-1">
+							<a th:href="@{/reserva/{id}/editar (id=${r.id})}" class="btn btn-primary btn-edit mb-1">
 								Editar
 							</a>
-							<a th:href="@{/reserva/{id}/excluir (id=${reserva.id})}"
-								class="btn btn-danger btn-edit mb-1"
-								onclick="return confirm('Tem certeza que deseja excluir a compra?');">
+							<a th:href="@{/reserva/{id}/excluir (id=${r.id})}" class="btn btn-danger btn-edit mb-1"
+								onclick="return confirm('Tem certeza que deseja excluir a reserva?');">
 								Excluir
 							</a>
 						</td>
-
 					</tr>
+
 
 				</tbody>
 			</table>

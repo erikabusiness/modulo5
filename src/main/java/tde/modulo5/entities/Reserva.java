@@ -35,4 +35,5 @@ public class Reserva {
 	private Destino destino;
 
 }
+// Somente Destino e Usuario estão funcionando!!!
 
