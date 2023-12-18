@@ -1,6 +1,6 @@
 # The Discoverer Experience
 
-Bem-vindo ao repositório do projeto "The Discoverer Experience". Este é um projeto desenvolvido como parte do curso Recode Pro, módulo 05, que abrange os seguintes aspectos:
+Bem-vindo ao repositório do projeto "The Discoverer Experience". Este é um projeto desenvolvido como parte do curso Recode Pro para o módulo 05, que abrange os seguintes aspectos:
 
 ![The Discoverer Experience MVC Spring Boot](src/main/webapp/assets/tde-mvc.gif)
 
