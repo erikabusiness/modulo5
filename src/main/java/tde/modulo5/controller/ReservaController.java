@@ -140,7 +140,7 @@ public class ReservaController {
 
 	@GetMapping("/{id}/editar")
 	public ModelAndView editar(@PathVariable Long id) {
-		ModelAndView modelAndView = new ModelAndView("reserva:/edit"); // nome da pasta / arquivo html
+		ModelAndView modelAndView = new ModelAndView("reserva/edit"); // nome da pasta / arquivo html
 
 		Reserva reserva = reservaRepository.getReferenceById(id);
 		modelAndView.addObject("listaUsuario", usuarioRepository.findAll());
