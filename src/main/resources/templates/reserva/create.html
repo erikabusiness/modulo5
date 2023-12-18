@@ -34,7 +34,7 @@
 			<div class="form-group mb-3">
 				<label for="usuario" class="form-label"> Id Usuario </label>
 				<select th:field="*{usuario}" class="form-control">
-					<option th:each="usuario : ${listaUsuarios}" th:text="${usuario.nome}" th:value="${usuario.id}">
+					<option th:each="usuario : ${listaUsuario}" th:text="${usuario.nome}" th:value="${usuario.id}">
 					</option>
 				</select>
 			</div>
