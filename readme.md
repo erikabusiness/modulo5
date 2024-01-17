@@ -10,6 +10,7 @@ Bem-vindo ao repositório do projeto "The Discoverer Experience". Este é um pro
 - [Back-End](#back-end)
 - [Front-End](#front-end)
 - [Banco de Dados](#banco-de-dados)
+- [Nota do projeto](#nota-do-projeto)
 
 ## Back-End
 
@@ -24,3 +25,7 @@ Bem-vindo ao repositório do projeto "The Discoverer Experience". Este é um pro
 - **Ajustes no Modelo Lógico do Banco de Dados:** Foi realizado um refinamento do modelo lógico do banco de dados, incluindo a definição de tabelas, atributos e relacionamentos. Essas alterações foram feitas para atender às necessidades específicas do projeto.
 
 - **Implementação do Banco de Dados:** O banco de dados foi implementado utilizando o MySQL. Foram criadas as tabelas necessárias de forma manual para armazenar os dados relacionados aos destinos de viagem.
+
+## Nota do projeto
+
+![Tnota do projeto]()
