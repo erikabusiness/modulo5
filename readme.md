@@ -28,4 +28,4 @@ Bem-vindo ao repositório do projeto "The Discoverer Experience". Este é um pro
 
 ## Nota do projeto
 
-![Tnota do projeto]()
+![Tnota do projeto](https://raw.githubusercontent.com/alvserika/modulo5/143a139cc6cb75d0ce4ddcd9fd8a6baa429e3b5d/src/main/resources/static/assets/nota-modulo-5.png)
